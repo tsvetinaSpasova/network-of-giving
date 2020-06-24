@@ -1,0 +1,80 @@
+<header class="header header-4">
+    <div class="branding">
+        <a href="/home" class="nav-link">
+            <clr-icon shape="vm-bug"></clr-icon>
+            <span class="title">Network of Giving</span>
+        </a>
+    </div>
+    <div class="header-nav">
+        <a href="/reasons-to-give-to-charity" class="nav-link nav-text">Why to give to charity</a>
+    </div>
+    <div class="header-actions">
+        <div class="header-nav">
+            <a href="/create" class="active nav-link"><span class="nav-text">Create charity</span></a>
+        </div>
+        <clr-dropdown>
+            <button class="nav-icon" clrDropdownTrigger aria-label="toggle settings menu">
+                <clr-icon shape="cog"></clr-icon>
+                <clr-icon shape="caret down"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                <a href="/login" clrDropdownItem>Log In</a>
+                <a href="/sign-up" clrDropdownItem>Sign Up</a>
+            </clr-dropdown-menu>
+        </clr-dropdown>
+    </div>
+</header>
+
+<ng-container *ngIf="charity">
+    <div class="clr-col-6">
+        <div class="card">
+            <div class="card-header">
+                {{charity.title}}
+            </div>
+            <div class="card-block">
+                <div class="clr-row">
+
+                    <span>  
+                            <img src={{getImage(charity.image)}} class="card-media-image">
+                        </span>
+                    <div class="clr-col-3">
+                        <form class="clr-form">
+                            <label for="basic" class="clr-control-label">Enter amount to donate:</label>
+                            <div class="clr-control-container">
+                                <div class="clr-input-wrapper">
+                                    <input type="number" [(ngModel)]="amountToDonate" placeholder="{{amountToDonate}}" name="amountToDonate" class="clr-input">
+                                    <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" (click)="donate()">DONATE</button>
+                        </form>
+                        <p></p>
+                        <span>
+                                    <button class="btn btn-primary" (click)="delete()">DELETE</button>
+                                    <p></p>
+                                    <button class="btn btn-success" (click)="btnEdit()">EDIT</button>
+                                  
+                        </span>
+                        <p></p>
+                        <a href="/charity/{{charity.id}}" class="label label-blue clickable">
+                                    RAISED
+                                    <span class="badge">{{charity.amountCollected}}$</span>
+                            </a>
+                        <a href="/charity/{{charity.id}}" class="label label-blue clickable">
+                                    REQUIRED
+                                    <span class="badge">{{charity.amountRequired}}$</span>
+                            </a>
+                    </div>
+                </div>
+                <div class="card-media-block">
+                    <div class="card-media-description">
+
+                    </div>
+                </div>
+                <div class="card-text">
+                    {{charity.description}}
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

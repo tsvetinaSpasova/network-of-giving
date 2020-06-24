@@ -1,0 +1,80 @@
+<header class="header header-4">
+    <div class="branding">
+        <a href="/home" class="nav-link">
+            <clr-icon shape="vm-bug"></clr-icon>
+            <span class="title">Network of Giving</span>
+        </a>
+    </div>
+    <div class="header-nav">
+        <a href="/reasons-to-give-to-charity" class="nav-link nav-text">Why to give to charity</a>
+    </div>
+    <div class="header-actions">
+        <div class="header-nav">
+            <a href="/create" class="active nav-link"><span class="nav-text">Create charity</span></a>
+        </div>
+        <clr-dropdown>
+            <button class="nav-icon" clrDropdownTrigger aria-label="toggle settings menu">
+                <clr-icon shape="cog"></clr-icon>
+                <clr-icon shape="caret down"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                <a href="/login" clrDropdownItem>Log In</a>
+                <a href="/sign-up" clrDropdownItem>Sign Up</a>
+            </clr-dropdown-menu>
+        </clr-dropdown>
+    </div>
+</header>
+
+
+<div>
+    <label>Search charity:
+    <input #charityTitle (ngModelChange)="handleTermChange($event)" [(ngModel)]="searchTerm"/>
+  </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button class="btn btn-info-outline" (click)="searchBy(searchTerm)">
+    Search
+  </button>
+
+
+</div>
+
+<div *ngFor="let charity of filteredCharities">
+
+    <div class="clr-col-4">
+        <div class="card">
+            <div class="card-header">
+                {{charity.title}}
+            </div>
+            <div class="card-block">
+                <div class="card-media-block">
+                    <img src={{getImage(charity.image)}} class="card-media-image">
+                    <div class="card-media-description">
+                        <span class="card-media-title">
+                                        <a href="/charity/{{charity.id}}" class="label label-blue clickable">
+                                            REQUIRED
+                                            <span class="badge">{{charity.amountRequired}}$</span>
+                        </a>
+                        </span>
+                        <span class="card-media-text">
+                                        <a href="/charity/{{charity.id}}" class="label label-blue clickable">
+                                            RAISED
+                                            <span class="badge">{{charity.amountCollected}}$</span>
+                        </a>
+
+                        </span>
+                    </div>
+                </div>
+                <div class="card-text">
+                    {{charity.description}}
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="/charity/{{charity.id}}">
+                    <button class="btn btn-sm btn-link">
+                    SEE MORE
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

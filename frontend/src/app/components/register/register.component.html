@@ -1,0 +1,76 @@
+<div class="login-wrapper">
+    <form class="login">
+        <section class="title">
+            <h3 class="welcome">Welcome to</h3>
+            Network of Giving
+            <h5 class="hint"></h5>
+        </section>
+        <div class="login-group">
+            <form class="clr-form">
+                <div class="clr-form-control">
+                    <label for="example" class="clr-control-label">Name</label>
+                    <div class="clr-control-container">
+                        <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                        </div>
+                        <span class="clr-subtext"></span>
+                    </div>
+                </div>
+                <div class="clr-form-control">
+                    <label for="example" class="clr-control-label">Username</label>
+                    <div class="clr-control-container">
+                        <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                        </div>
+                        <span class="clr-subtext"></span>
+                    </div>
+                </div>
+                <label for="basic" class="clr-control-label">Password</label>
+                <div class="clr-control-container">
+                    <div class="clr-input-wrapper">
+                        <input type="password" id="basic" placeholder="Password please!" class="clr-input">
+                        <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                    </div>
+                    <span class="clr-subtext"></span>
+                </div>
+                <p></p>
+                <div class="clr-form-control">
+                    <label for="example" class="clr-control-label">Location</label>
+                    <div class="clr-control-container">
+                        <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                        </div>
+                        <span class="clr-subtext"></span>
+                    </div>
+                </div>
+                <clr-radio-container clrInline>
+                    <label>Gender</label>
+                    <clr-radio-wrapper>
+                        <input type="radio" clrRadio name="options" required value="MALE" (ngModel)="gender" />
+                        <label>Male</label>
+                    </clr-radio-wrapper>
+                    <clr-radio-wrapper>
+                        <input type="radio" clrRadio name="options" required value="FEMALE" (ngModel)="gender" />
+                        <label>Female</label>
+                    </clr-radio-wrapper>
+                    <clr-radio-wrapper>
+                        <input type="radio" clrRadio name="options" required value="OTHER" (ngModel)="gender" />
+                        <label>Other</label>
+                    </clr-radio-wrapper>
+                    <clr-control-error>This field is required!</clr-control-error>
+                </clr-radio-container>
+
+
+                <button class="btn btn-primary btn-block" (click)="btnSignup()">Sing Up</button>
+
+                <button class="btn btn-success btn-block" (click)="btnCancel()">Cancel</button>
+
+
+
+            </form>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+.card {
+    width: 40rem;
+    height: 30rem;
+    animation-duration: inherit;
+}
+
+.card-media-image {
+    height: 15rem;
+    width: 20rem;
+    max-width: 50rem;
+    max-height: 50rem;
+}

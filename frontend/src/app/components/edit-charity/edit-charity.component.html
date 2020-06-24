@@ -1,0 +1,55 @@
+<div class="login-wrapper">
+    <form class="login">
+        <section class="title">
+            <h3 class="welcome">Edit</h3>
+            Charity
+            <h5 class="hint"></h5>
+        </section>
+        <div class="login-group">
+            <form class="clr-form">
+                <div class="clr-form-control">
+                    <label for="example" class="clr-control-label">Title</label>
+                    <div class="clr-control-container">
+                        <div class="clr-input-wrapper">
+                            <input type="text" [(ngModel)]="charity.title" name="title" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                        </div>
+                        <span class="clr-subtext"></span>
+                    </div>
+                </div>
+                <div class="clr-form-control">
+                    <label for="example" class="clr-control-label">Description</label>
+                    <div class="clr-control-container">
+                        <div class="clr-input-wrapper">
+                            <input type="text" [(ngModel)]="charity.description" placeholder={{charity.description}} name="description" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                        </div>
+                        <span class="clr-subtext"></span>
+                    </div>
+                </div>
+                <label for="basic" class="clr-control-label">Donation Required</label>
+                <div class="clr-control-container">
+                    <div class="clr-input-wrapper">
+                        <input type="number" [(ngModel)]="charity.amountRequired" placeholder={{charity.amountRequired}} name="donation_requered" placeholder="0" class="clr-input">
+                        <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                    </div>
+                    <span class="clr-subtext"></span>
+                </div>
+                <div *ngIf="fileUpload" class="progress">
+                    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+                        {{progress.percentage}}%</div>
+                </div>
+
+                <label class="btn btn-default">
+        <input type="file" (change)="selectFile($event)" #file>
+    </label>
+
+                <button id="upload" class="btn btn-success" (click)="upload()">Upload</button>
+                <div>
+                    <button class="btn btn-primary" type="submit" id="edit" (click)="edit()">Done</button>
+                    <button class="btn" (click)="btnClickCancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </form>
+</div>

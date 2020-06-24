@@ -1,0 +1,25 @@
+<div class="login-wrapper">
+    <form class="login">
+        <section class="title">
+            <h3 class="welcome">Welcome to</h3>
+            Network of Giving
+            <h5 class="hint"></h5>
+        </section>
+        <div class="login-group">
+
+            <clr-input-container>
+                <label class="clr-sr-only">Username</label>
+                <input type="text" name="user.username" clrInput placeholder="Username" [(ngModel)]="user.username" />
+            </clr-input-container>
+            <clr-password-container>
+                <label class="clr-sr-only">Password</label>
+                <input type="password" name="user.password" clrPassword placeholder="Password" [(ngModel)]="user.password" />
+            </clr-password-container>
+            <!-- <div class="error active">
+                Invalid user name or password
+            </div> -->
+            <button type="submit" class="btn btn-primary">NEXT</button>
+            <a href="/sign-up" class="signup">Sign up</a>
+        </div>
+    </form>
+</div>

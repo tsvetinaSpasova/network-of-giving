@@ -1,0 +1,13 @@
+.login-wrapper {
+    background-image: url(../../../edit.png);
+    background-repeat: no-repeat;
+    background-size: 600px 800px;
+    background-position: rightcenter;
+}
+
+.new {
+    background-image: url(../../../create_charity.jpg);
+    background-repeat: no-repeat;
+    background-size: 600px 800px;
+    background-position: rightcenter;
+}
