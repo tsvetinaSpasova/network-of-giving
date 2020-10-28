@@ -1,6 +1,6 @@
 # Network-Of-Giving
 
-## Final task for the 2020 edition of VmWare's academy. 
+## Final task for the 2020 edition of VMware's academy. 
 
 * Website which allows you to donate money or become 
 а volunteer for a charity event. 
